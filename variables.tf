@@ -1,16 +1,14 @@
-variable "stage_domains" {
+variable "subdomain" {
+  type        = string
+  description = "The subdomain for API Gateway, which will be programmatically appended with the domain, and (optionally) prepended with subdomain_suffix"
+}
+
+variable "stages" {
   type = map(
     object({
-      domain                = string
-      subdomain             = string
-      subdomain_suffix      = string
-      serverless_api_domain = string
-      platform_domains      = map(string)
-      certificate_arn       = string
-      dns_provider          = string
-      dns_domain_id         = string
-      stage_env_vars        = map(string)
+      domain           = string
+      subdomain_suffix = optional(string)
     })
   )
-  description = "The stage domain config (the output from the terraform-aws-dns module)"
+  description = "Stage configuration, keyed by stage name"
 }

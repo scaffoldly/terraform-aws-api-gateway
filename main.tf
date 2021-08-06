@@ -50,14 +50,14 @@ resource "aws_api_gateway_account" "account" {
 
 module "domain" {
   source  = "scaffoldly/api-gateway-domain/aws"
-  version = "0.15.1"
+  version = "1.0.5"
 
-  for_each = var.stage_domains
+  for_each = var.stages
 
-  dns_provider    = lookup(each.value, "dns_provider", "unknown-dns-provider")
-  dns_domain_id   = lookup(each.value, "dns_domain_id", "unknown-dns-domain-id")
-  domain          = lookup(each.value, "serverless_api_domain", "unknown-domain")
-  certificate_arn = lookup(each.value, "certificate_arn", "unknown-arn")
+  stage            = each.key
+  domain           = each.value.domain
+  subdomain        = var.subdomain
+  subdomain_suffix = each.value.subdomain_suffix != null ? each.value.subdomain_suffix : ""
 
   providers = {
     aws.dns = aws.dns
