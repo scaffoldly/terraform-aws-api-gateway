@@ -4,6 +4,7 @@ output "api_gateway_stages" {
     domain.stage => {
       stage_domain       = domain.domain
       api_gateway_domain = domain.api_gateway_domain
+      zone_id            = domain.zone_id
     }
   }
   description = "A map of API Gateway stages, keyed by stage"
