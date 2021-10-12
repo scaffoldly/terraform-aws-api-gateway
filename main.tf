@@ -50,7 +50,7 @@ resource "aws_api_gateway_account" "account" {
 
 module "domain" {
   source  = "scaffoldly/api-gateway-domain/aws"
-  version = "1.0.8"
+  version = "1.0.9"
 
   for_each = var.stages
 
