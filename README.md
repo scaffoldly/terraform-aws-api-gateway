@@ -41,7 +41,7 @@ module "aws_api_gateway" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_domain"></a> [domain](#module\_domain) | scaffoldly/api-gateway-domain/aws | 1.0.8 |
+| <a name="module_domain"></a> [domain](#module\_domain) | scaffoldly/api-gateway-domain/aws | 1.0.9 |
 
 ## Resources
 
