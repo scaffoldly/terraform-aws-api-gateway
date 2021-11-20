@@ -41,7 +41,7 @@ module "aws_api_gateway" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_domain"></a> [domain](#module\_domain) | scaffoldly/api-gateway-domain/aws | 1.0.10 |
+| <a name="module_domain"></a> [domain](#module\_domain) | scaffoldly/api-gateway-domain/aws | 1.0.12 |
 
 ## Resources
 
@@ -57,6 +57,7 @@ module "aws_api_gateway" {
 |------|-------------|------|---------|:--------:|
 | <a name="input_stages"></a> [stages](#input\_stages) | Stage configuration, keyed by stage name | <pre>map(<br>    object({<br>      domain           = string<br>      subdomain_suffix = optional(string)<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain for API Gateway, which will be programmatically appended with the domain, and (optionally) prepended with subdomain\_suffix | `string` | n/a | yes |
+| <a name="input_websockets"></a> [websockets](#input\_websockets) | Enable websockets for each API | `bool` | `false` | no |
 
 ## Outputs
 
