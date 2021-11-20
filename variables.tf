@@ -3,6 +3,12 @@ variable "subdomain" {
   description = "The subdomain for API Gateway, which will be programmatically appended with the domain, and (optionally) prepended with subdomain_suffix"
 }
 
+variable "websockets" {
+  type        = bool
+  description = "Enable websockets for each API"
+  default     = false
+}
+
 variable "stages" {
   type = map(
     object({

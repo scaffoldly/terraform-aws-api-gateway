@@ -50,7 +50,7 @@ resource "aws_api_gateway_account" "account" {
 
 module "domain" {
   source  = "scaffoldly/api-gateway-domain/aws"
-  version = "1.0.10"
+  version = "1.0.12"
 
   for_each = var.stages
 
@@ -58,6 +58,7 @@ module "domain" {
   domain           = each.value.domain
   subdomain        = var.subdomain
   subdomain_suffix = each.value.subdomain_suffix != null ? each.value.subdomain_suffix : ""
+  websocket        = var.websockets
 
   providers = {
     aws.dns = aws.dns
