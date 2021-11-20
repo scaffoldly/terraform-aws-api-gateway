@@ -4,6 +4,7 @@ output "api_gateway_stages" {
     domain.stage => {
       stage_domain                    = domain.domain
       api_gateway_domain              = domain.api_gateway_domain
+      api_gateway_websocket           = domain.api_gateway_websocket
       api_gateway_websocket_domain    = domain.api_gateway_websocket_domain
       api_gateway_websocket_domain_id = domain.api_gateway_websocket_domain_id
       subdomain                       = domain.subdomain
